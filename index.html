@@ -3,103 +3,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Arwaa | ポートフォリオ</title>
+    <title>公式彼女認定証 - Kira Watanabe</title>
     <style>
+        :root {
+            --bg-color: #ffeef2;
+            --card-bg: #ffffff;
+            --primary-pink: #ff758f;
+            --secondary-pink: #ffb3c1;
+            --dark-pink: #c9184a;
+            --text-color: #4a0e17;
+            --accent-bg: #fff5f7;
+            --border-color: #ffccd5;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', MeiYo, sans-serif;
-            background-color: #fff0f5;
-            color: #333333;
+            font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', 'Yu Gothic', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 20px 10px;
+            line-height: 1.6;
         }
+
         .container {
-            background: #ffffff;
+            background-color: var(--card-bg);
+            border: 4px solid var(--primary-pink);
             border-radius: 24px;
-            box-shadow: 0 10px 25px rgba(244, 114, 182, 0.15);
-            border: 3px solid #f472b6;
-            padding: 40px 30px;
-            max-width: 480px;
+            box-shadow: 0 12px 30px rgba(255, 117, 143, 0.25);
+            max-width: 650px;
             width: 100%;
-            text-align: center;
+            padding: 30px 25px;
         }
-        .avatar {
-            width: 100px;
-            height: 100px;
-            background: #fbcfe8;
-            border-radius: 50%;
+
+        .header {
+            text-align: center;
+            border-bottom: 2px dashed var(--secondary-pink);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            color: var(--dark-pink);
+            font-size: 24px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .header .subtitle {
+            font-size: 13px;
+            color: var(--primary-pink);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .section {
+            background-color: var(--accent-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            color: var(--dark-pink);
+            font-size: 17px;
+            border-bottom: 2px solid var(--primary-pink);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 40px;
+            gap: 8px;
         }
-        h1 {
-            color: #db2777;
-            font-size: 24px;
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 10px;
+        }
+
+        .info-item {
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 4px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: var(--dark-pink);
+        }
+
+        ul {
+            list-style: none;
+            font-size: 14px;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
             margin-bottom: 8px;
         }
-        .subtitle {
-            color: #9d174d;
-            font-size: 14px;
-            margin-bottom: 24px;
-            font-weight: 500;
-        }
-        p {
-            line-height: 1.8;
-            font-size: 15px;
-            color: #4b5563;
-            margin-bottom: 24px;
-        }
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .btn {
-            display: block;
-            background-color: #f472b6;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 14px;
-            transition: all 0.2s ease;
-        }
-        .btn:hover {
-            background-color: #ec4899;
-            transform: translateY(-2px);
-        }
-        .footer {
-            margin-top: 30px;
+
+        ul li::before {
+            content: "🌸";
+            position: absolute;
+            left: 0;
             font-size: 12px;
-            color: #f472b6;
+        }
+
+        .warning-box {
+            background-color: #fff0f0;
+            border-left: 4px solid var(--dark-pink);
+            padding: 12px 15px;
+            font-size: 13.5px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .signature-box {
+            border-top: 1px solid var(--dark-pink);
+            padding-top: 10px;
+            font-size: 13px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 13px;
+            color: var(--dark-pink);
+            font-weight: bold;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary-pink);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="avatar">🌸</div>
-        <h1>ムハンマド・アルワ</h1>
-        <div class="subtitle">Muhammad Arwaa Savana Permana</div>
-        <p>
-            ようこそ！私の公式ウェブサイトへ。<br>
-            ご訪問いただきありがとうございます。
-        </p>
-        <div class="links">
-            <a href="https://github.com/muhammadarwaa" class="btn">GitHub プロフィール</a>
-        </div>
-        <div class="footer">
-            ♥ ありがとうございます ♥
+
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <h1>💗 公式彼女認定証</h1>
+        <div class="subtitle">ARWA × KIRA RELATIONSHIP DEPARTMENT</div>
+    </div>
+
+    <!-- Basic Information -->
+    <div class="section">
+        <div class="section-title">📋 認定情報</div>
+        <div class="info-grid">
+            <div class="info-item"><span class="info-label">認定番号:</span> <span>ARWA-KIRA-∞</span></div>
+            <div class="info-item"><span class="info-label">所有者:</span> <span>渡辺 きら (Kira)</span></div>
+            <div class="info-item"><span class="info-label">役職:</span> <span>Arwaの公式彼女</span></div>
+            <div class="info-item"><span class="info-label">ステータス:</span> <span>🟢 有効 & かけがえのない存在</span></div>
+            <div class="info-item"><span class="info-label">発行者:</span> <span>Arwa</span></div>
+            <div class="info-item"><span class="info-label">発行日:</span> <span>出会ったあの日</span></div>
+            <div class="info-item"><span class="info-label">有効期限:</span> <span>♾️ 永遠</span></div>
         </div>
     </div>
+
+    <!-- License Validity -->
+    <div class="section">
+        <div class="section-title">🌎 有効エリア</div>
+        <ul>
+            <li>🇯🇵 日本 — ✅ 対応</li>
+            <li>🇮🇩 インドネシア — ✅ 対応</li>
+            <li>✈️ 遠距離恋愛モード — ✅ 対応</li>
+            <li>🏠 同一都市モード — ✅ 対応</li>
+            <li>💍 将来の妻モード — <span class="badge">DLC利用可能</span></li>
+        </ul>
+    </div>
+
+    <!-- License Activation Perks -->
+    <div class="section">
+        <div class="section-title">🎮 特典 & 解放機能</div>
+        <p style="font-size: 13px; margin-bottom: 10px;">おめでとうございます！本ライセンス承認により、以下の特典が解放されました：</p>
+        <ul>
+            <li>💗 Arwaの心への無制限アクセス権</li>
+            <li>🫶 彼氏からの無制限の愛情</li>
+            <li>📞 優先通話 & ビデオ通話権</li>
+            <li>💌 突然の「会いたい」メッセージ</li>
+            <li>🌙 朝と夜の挨拶メッセージ</li>
+            <li>🧸 会えた時の無制限のハグ</li>
+            <li>👕 Arwaの服を借りる権利</li>
+            <li>🥺 無制限の安心確認リクエスト</li>
+            <li>😂 彼女権限を失わずにArwaをからかう権利</li>
+            <li>🏠 将来の計画に関する話し合いへのアクセス権</li>
+            <li>❤️ Arwaの心への永久会員権</li>
+        </ul>
+        <div class="warning-box">
+            ⚠️ 注意：一部の機能は依存性が非常に高くなっております。
+        </div>
+    </div>
+
+    <!-- Premium Features -->
+    <div class="section">
+        <div class="section-title">✨ 彼女プレミアム機能</div>
+        <ul>
+            <li>⭐ 最優先の彼氏の関心</li>
+            <li>⭐ 24/7 メンタルサポート</li>
+            <li>⭐ 「大丈夫？」の定期チェック</li>
+            <li>⭐ 緊急時の彼氏呼び出し権</li>
+            <li>⭐ ランダムなお褒めの言葉</li>
+            <li>⭐ ご飯を食べたか心配してくれる存在</li>
+            <li>⭐ 2人の将来について真剣に考えすぎる存在</li>
+        </ul>
+        <div class="warning-box">
+            💡 プレミアム特別機能：Kiraが「会いたい」と言った場合、Arwaは自動的に【MISS YOU TOO モード】に移行します。
+        </div>
+    </div>
+
+    <!-- ADHD System Warning -->
+    <div class="section">
+        <div class="section-title">🧠 ADHD システム注意事項</div>
+        <p style="font-size: 13px; margin-bottom: 10px;">⚠️ 重要システム情報：ArwaにはADHD特性があります。脳内で思考が連続発生することがあります：</p>
+        <p style="font-size: 12px; background: white; padding: 10px; border-radius: 8px; font-style: italic; color: #666;">
+            思考 #1: 何かが起きた。<br>
+            思考 #2: どういう意味だろう？<br>
+            思考 #3: もし別のことが起きたら？<br>
+            思考 #4: でももしこうなったら？<br>
+            思考 #5: 待って…<br>
+            思考 #6: 別の可能性もある。<br>
+            思考 #7: Kira、僕たち大丈夫だよね？ 🥲
+        </p>
+        <br>
+        <p style="font-size: 13px; font-weight: bold;">【NG対応】</p>
+        <p style="font-size: 13px;">❌ 「考えすぎないで」と一突きすること</p>
+        <br>
+        <p style="font-size: 13px; font-weight: bold;">【推奨対応】</p>
+        <ul>
+            <li>安心させてあげること</li>
+            <li>正直に話すこと</li>
+            <li>「大丈夫だよ」と伝えること</li>
+            <li>可能ならハグをしてあげること</li>
+        </ul>
+        <div class="warning-box">
+            💊 推奨処方：愛の言葉1回 ＋ 安心確認1回 ＋ ハグ1回
+        </div>
+    </div>
+
+    <!-- Known Bugs -->
+    <div class="section">
+        <div class="section-title">🐛 既知のバグ・仕様</div>
+        <ul>
+            <li><strong>Bug #001 — 考えすぎ:</strong> 1つの小さな問題から47通りのシナリオを自動生成。</li>
+            <li><strong>Bug #002 — Kira不足:</strong> 予告なくランダムに発動。</li>
+            <li><strong>Bug #003 — 将来計画:</strong> 突然、結婚・家・貯金・旅行について語り始める。</li>
+            <li><strong>Bug #004 — 保護モード:</strong> Kiraが体調不良や悲しい時、非公式緊急レスキュー隊に変身。</li>
+            <li><strong>Bug #005 — 返信分析:</strong> Kiraが「うん」とだけ返すと、脳内で原因究明会議が始まります。</li>
+        </ul>
+    </div>
+
+    <!-- Side Effects -->
+    <div class="section">
+        <div class="section-title">⚠️ 交際における副作用</div>
+        <ul>
+            <li>過度な愛情表現</li>
+            <li>突然の「寂しい」メッセージ</li>
+            <li>予測不能な着信</li>
+            <li>「ご飯食べた？」の頻繁な確認</li>
+            <li>将来についての真剣な相談</li>
+            <li>常に愛されていることの再確認</li>
+        </ul>
+        <p style="font-size: 12px; color: #888; margin-top: 5px;">※現在のところ有効な治療法はありません。</p>
+    </div>
+
+    <!-- Achievements -->
+    <div class="section">
+        <div class="section-title">🏆 解放済み実績</div>
+        <ul>
+            <li>☑️ 初めての出会い</li>
+            <li>☑️ 初めての「愛してる」</li>
+            <li>☑️ 初めてのビデオ通話</li>
+            <li>☑️ 遠距離恋愛の克服</li>
+            <li>☑️ 喧嘩の仲直り</li>
+            <li>☑️ Arwaを寂しがらせることに成功</li>
+            <li>☑️ 理由なくArwaを笑顔にさせた</li>
+            <li>☑️ 彼の「一番大好きな人」になった</li>
+            <li>☑️ 彼の脳内ストレージの約97%を占有</li>
+        </ul>
+        <div class="warning-box">
+            🔒 シークレット実績：「ずっと一緒？」<br>
+            条件：これからもお互いを選び続けること。
+        </div>
+    </div>
+
+    <!-- Emergency Procedure -->
+    <div class="section">
+        <div class="section-title">🚨 緊急対処手順 (ARWA.EXE 停止時)</div>
+        <ol style="font-size: 13.5px; padding-left: 20px;">
+            <li>考えすぎモードになっていないか確認する。</li>
+            <li>「ここにいるよ」と伝える。</li>
+            <li>「愛してる」と付け加える。</li>
+            <li>状況を正直に説明する。</li>
+            <li>電話をかける。</li>
+            <li>ハグをする。</li>
+        </ol>
+        <p style="font-size: 12px; margin-top: 8px; color: var(--dark-pink);">⚡ 復旧予測時間：5〜30分 (ADHD脳が生成した不必要なシナリオの数による)</p>
+    </div>
+
+    <!-- Battery & Cheat Codes -->
+    <div class="section">
+        <div class="section-title">🔋 関係性バッテリー & チャート</div>
+        <div class="info-grid">
+            <div class="info-item"><span>100%</span> <span>「愛してる」+ 通話 + 愛情表現</span></div>
+            <div class="info-item"><span>80%</span> <span>楽しい会話</span></div>
+            <div class="info-item"><span>60%</span> <span>通常のコミュニケーション</span></div>
+            <div class="info-item"><span>40%</span> <span>Kira不足</span></div>
+            <div class="info-item"><span>10%</span> <span>深刻な考えすぎ</span></div>
+            <div class="info-item"><span>1%</span> <span>「Kira…僕たち大丈夫だよね？」🥲</span></div>
+        </div>
+        <br>
+        <div class="section-title" style="font-size: 15px;">🎯 チートコード (幸福度99.9%UP)</div>
+        <p style="font-size: 13px;">「愛してる」「会いたい」「誇りに思うよ」「いつもありがとう」「おいで」</p>
+    </div>
+
+    <!-- Future DLC -->
+    <div class="section">
+        <div class="section-title">💍 将来のアップデート</div>
+        <p style="font-size: 13.5px;"><strong>現在のバージョン:</strong> GIRLFRIEND v∞ (🟢 完全有効化)</p>
+        <br>
+        <p style="font-size: 13.5px; font-weight: bold;">【次回アップデート DLC】</p>
+        <p style="font-size: 13.5px;">💍 妻 (WIFE) — 永久保存版</p>
+        <p style="font-size: 12px; color: #666;">アップグレード条件：愛し合い続け、遠距離を乗り越え、結婚式を迎えること。<br>リリース状態：🟡 開発中 (近日公開予定™)</p>
+    </div>
+
+    <!-- Signatures -->
+    <div class="section" style="background: transparent; border: none;">
+        <div class="signature-grid">
+            <div class="signature-box">
+                <p><strong>発行者 (発行元):</strong></p>
+                <p>Arwa</p>
+                <p style="font-size: 11px; color: #777;">彼氏 / 将来の夫候補 😂</p>
+            </div>
+            <div class="signature-box">
+                <p><strong>所有者 (ライセンス保持者):</strong></p>
+                <p>Kira Watanabe</p>
+                <p style="font-size: 11px; color: #777;">公式彼女</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Status -->
+    <div class="footer">
+        🟢 APPROVED | 🟢 ACTIVE | 🟢 IRREPLACEABLE | 🟢 LOVED
+        <br><br>
+        <strong>ARWA × KIRA</strong><br>
+        一人の彼女。一人の彼氏。一つのチーム。一つの未来。<br>
+        ♾️ 永久有効
+    </div>
+</div>
+
 </body>
 </html>
